@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>ClassTeacher</title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="css/animate.css">
+      <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script type="text/javascript" src="js/jquery.js"></script>
+      <script type="text/javascript" src="js/jquery-ui.min.js"></script>  
+      <script type="text/javascript" src="js/enableDragMobile.js"></script>
+   </head>
+   <body>
+      <!-- <body oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;"> -->
+      <div class="wrapper">
+         <div id="header">
+            <div class="logo logoWrapper">
+               <a href="main.html"> <img src="img/logo.png"> </a>
+               <h3 class="headerText"></h3>
+            </div>
+            <h3 class="instruction"></h3>
+         </div>
+         <div class="innerWrapper">
+      
+            <div class="questionContainer">
+                   <img src='img/red1.png' class="questionBox drag">
+                   <img src='img/blue1.png' class="questionBox drag blue">
+                   <img src='img/red2.png' class="questionBox drag">
+                   <img src='img/blue2.png' class="questionBox drag blue">
+                   <img src='img/red3.png' class="questionBox drag">
+                   <img src='img/blue3.png' class="questionBox drag blue">
+                   <img src='img/red4.png' class="questionBox drag">     
+                   <img src='img/blue4.png' class="questionBox drag blue">
+            </div>
+          </div><!--innerwrapper end here -->
+          <div class="dropBox">
+                <div class="dropContainer drop">
+                   <img src="img/box.png">
+                   <img src="img/box2.png">
+                </div>              
+           </div>
+
+           <div class="nav">
+              <img src="img/prev.png" id='prev' />
+              <img src="img/next.png" id='next' />
+           </div>
+
+       </div>  <!--wrapper end here -->
+      <script type="text/javascript" src="data/data.js"></script>
+      <script type="text/javascript" src="js/script.js"></script>
+   </body>
+</html>
+

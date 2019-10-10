@@ -1,0 +1,157 @@
+* {
+margin: 0px;
+padding: 0px;
+}
+body {
+	/*background: radial-gradient(#673AB7, #00968859);*/
+	background: #a9a9a9;
+    font-family: cursive;
+	background-image: radial-gradient(#33e2bb, #2a4b48);
+    background-size: cover;
+	background-position: unset;
+	background-repeat: no-repeat;
+}
+
+.wrapper{
+	/*outline: 10px solid #36ae87;*/
+	min-height: 100vh;
+	max-width:960px;
+	margin:0px auto;
+	position: relative;
+
+}
+
+#header .logo h3 {
+flex-grow: 1;
+text-align: right;
+font-family: sans-serif;
+font-size: 28px;
+color: #fff;
+margin-top:0px;
+}
+
+#header .logo {
+margin: 0px auto;
+display: flex;
+align-items: center;
+}
+#header {
+padding: 15px;
+}
+
+.innerWrapper{
+   padding: 20px;
+height: 230px;
+
+}
+
+.innerWrapper h2{
+    font-family: sans-serif;
+    font-weight: bold;
+    position: relative;
+	left: -70px;
+
+}
+
+.instruction{
+    text-align: center;
+    color: #fff;
+    font-family: sans-serif;
+    padding-top: 15px;
+}
+.questionBox{
+	display: flex;
+	justify-content: center; align-items: center;
+    margin: 5px;
+
+}
+.questionContainer{
+display: flex;
+justify-content: center;
+flex-direction: row;
+flex-wrap: wrap;
+max-width: 500px;
+margin: auto;
+}
+.questionContainer img{
+    z-index: 9;
+}
+.compareBox{
+	width: 120px;
+	height: 33px;
+    background: #ffffff40;
+	margin: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.drag{
+    cursor: pointer;
+   
+}
+.compareSign{	
+	margin-bottom: 20px;
+}
+
+.green{
+    color: #fff;
+    background: linear-gradient(#0d771140, #07450985), url(../img/bg.png);
+    background-size: 100% 100%;
+}
+.red{
+    color: #fff;
+    background: linear-gradient(#f443366e, rgba(244, 67, 54, 0.25)), url(../img/bg.png);
+    background-size: 100% 100%;
+}
+.quest p{
+font-weight: bold;
+    color: #fff;
+    font-family: monospace;
+    font-size: 20px;
+}
+.dropBox{
+display: flex;
+/*padding: 15px;*/
+justify-content: center;
+}
+.drop{
+    position: relative;
+}
+.drop img{
+        width: 200px;
+}
+.drop img:first-child{position: absolute;}
+.drop img:nth-child(2){
+    z-index:99;
+    position: relative;
+}
+
+.dropAbs img{
+position: absolute; 
+}
+
+.nav{
+    padding: 0px 10px;
+    max-width: 500px;
+    margin: auto;
+    /*margin-top: -20px;*/
+}
+.nav img:nth-child(1){
+float:left;
+}
+.nav img:nth-child(2){
+    float:right;
+}
+.nav img{
+    width: 120px;
+    cursor:pointer;
+}
+@media screen and (max-width: 500px) {
+.logoWrapper img{width:100px;}
+#header .logo h3{font-size:20px;}
+.instruction {font-weight: normal;}
+.drag {width: 70px;}
+.innerWrapper{padding-top:0px;}
+.drop img {width: 150px;}
+} 
+/*  // media quesry end here...*/

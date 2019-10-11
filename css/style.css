@@ -5,11 +5,12 @@ padding: 0px;
 body {
 	/*background: radial-gradient(#673AB7, #00968859);*/
 	background: #a9a9a9;
-    font-family: cursive;
+    font-family: sans-serif;
 	background-image: radial-gradient(#33e2bb, #2a4b48);
     background-size: cover;
 	background-position: unset;
 	background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .wrapper{
@@ -145,7 +146,52 @@ float:left;
 .nav img{
     width: 120px;
     cursor:pointer;
+    z-index:999;
+    position: relative;
 }
+
+.congrates img{}
+.congrates h2{margin-bottom: 30px; color:#fff;}
+.congrates div{
+    position: absolute;
+top: 47%;
+left: 50%;
+transform: translate(-50% ,-50%);
+}
+.congrates{
+position: fixed;
+height: 100vh;
+width: 100%;
+top: 0;
+background: #000000db;
+z-index: 99;
+display: none;
+left: 0;
+display: none;
+}
+
+.congrates h4{
+cursor: pointer;
+text-align: center;
+padding-top: 20px;
+color: #f4f5f3;
+}
+
+.info{
+        border: 1px solid #fff;
+    padding: 15px;
+    display: inline-block;
+    color: #ffff;
+    background: #d39542;
+    position: fixed;
+    top: 38%;
+    z-index: 999;
+    box-shadow: 0px 0px 7px #000;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
 @media screen and (max-width: 500px) {
 .logoWrapper img{width:100px;}
 #header .logo h3{font-size:20px;}

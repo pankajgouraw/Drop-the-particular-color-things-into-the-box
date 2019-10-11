@@ -5,6 +5,7 @@
       <meta charset="utf-8">
       <link rel="stylesheet" type="text/css" href="css/animate.css">
       <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+      <link rel="stylesheet" type="text/css" href="css/animate.css">
       <link rel="stylesheet" type="text/css" href="css/style.css">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script type="text/javascript" src="js/jquery.js"></script>
@@ -24,26 +25,36 @@
          <div class="innerWrapper">
       
             <div class="questionContainer">
-                   <img src='img/red1.png' class="questionBox drag">
+                  <!--  <img src='img/red1.png' class="questionBox drag">
                    <img src='img/blue1.png' class="questionBox drag blue">
                    <img src='img/red2.png' class="questionBox drag">
                    <img src='img/blue2.png' class="questionBox drag blue">
                    <img src='img/red3.png' class="questionBox drag">
                    <img src='img/blue3.png' class="questionBox drag blue">
                    <img src='img/red4.png' class="questionBox drag">     
-                   <img src='img/blue4.png' class="questionBox drag blue">
+                   <img src='img/blue4.png' class="questionBox drag blue"> -->
             </div>
           </div><!--innerwrapper end here -->
           <div class="dropBox">
-                <div class="dropContainer drop">
-                   <img src="img/box.png">
-                   <img src="img/box2.png">
+                <div class="dropContainer drop ">
+                   <img src="img/box.png" class="animated zoomIn">
+                   <img src="img/box2.png" class="animated zoomIn">
                 </div>              
            </div>
 
            <div class="nav">
-              <img src="img/prev.png" id='prev' />
-              <img src="img/next.png" id='next' />
+              <img src="img/prev.png" id='prev' class="animated zoomIn" />
+              <img src="img/next.png" id='next' class="animated zoomIn" />
+              <p class="info animated zoomIn">Please drag all the image to the box.</p>
+           </div>
+
+           <div class="congrates animated bounceIn">
+            <div>
+              <h2>Congratulations...</h2>
+              <img src="img/congrates.png" />
+
+              <h4>Click me to play again...</h4>
+           </div>
            </div>
 
        </div>  <!--wrapper end here -->

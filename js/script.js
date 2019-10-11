@@ -1,15 +1,16 @@
 $(function() {
     let index = 0;
     let quest = '';
+    let x = 2; // To check all images dragged or not.
 
     // url value
     let url = window.location.href;
     if (url.indexOf('?') > 0) {
         let params = new URLSearchParams(url.substring(1));
         index = parseInt(params.get('qno'));
-        console.log("url variable available....");
+        // console.log("url variable available....");
     } else {
-        console.log("url variable not available...");
+        // console.log("url variable not available...");
     }
 
     $('.headerText').text(data[index].activityTitle);
@@ -20,26 +21,35 @@ $(function() {
 
 
 
-    // function for drag and drop
-    function dragDrop() {
 
+    // function for drag and drop
+
+    function dragDrop() {
         $('.drag').draggable({
             revert: 'invalid',
             snapMode: 'inner'
+              
         });
 
         $(".drop").droppable({
-            accept: ".blue",
+            accept: "."+data[index].colorName,
             tolerance: 'intersect',
             drop: function(event, ui) {
                 $(ui.draggable).fadeOut();
-                beepAudio('audio/beep.mp3');
+                beepAudio('audio/welldone.mp3');
+                if(data[index].activityImages.length >= x ){
+                  // console.log(x);
+                  x++;
+                }else{
+                  console.log('Congrates..');
+                  $('.congrates').show();
+                  x++;
+                }
             }
         });
 
     } //end here drag and drop 
 
-    dragDrop();
 
 
     let loadData = function(){
@@ -48,28 +58,38 @@ $(function() {
       let colorName = data[index].colorName;
 
        $.each(otherImages, function(i,value){
-        let img = ` <img src='img/${value}' class="questionBox drag">`;
+        let img = ` <img src='img/${value}' class="questionBox drag animated zoomIn">`;
         quest = quest + img ;
        }) 
 
        $.each(activityImages, function(i,value){
-        let img = ` <img src='img/${value}' class="questionBox drag ${colorName}">`;
+        let img = ` <img src='img/${value}' class="questionBox drag ${colorName} animated zoomIn">`;
         quest = quest + img ;
-       }) 
+       })
+
+       $('.questionContainer').html(quest); 
    
     }  // end load data function
 
-    loadData();
-        console.log(quest);
+    console.log(quest);
 
     let beepAudio = function(music) {
         let audio = new Audio(music);
         audio.play();
     } //end play audio function
 
-
+    $('.congrates h4').click(function(){
+      location.reload();
+    })
 
     $('#next').click(function() {
+        if(data[index].activityImages.length+2 > x){
+          $('.info').show();
+          setTimeout(function(){
+            $('.info').hide();
+          },3000)
+          return false;
+        }
         index++;
         let url2 = window.location.pathname;
         var newurl = url2 + `?data=all&qno=${index}`;
@@ -78,6 +98,13 @@ $(function() {
 
 
     $('#prev').click(function() {
+        if(data[index].activityImages.length+2 > x){
+          $('.info').show();
+          setTimeout(function(){
+            $('.info').hide();
+          },3000)
+          return false;
+        }
         index--;
         let url2 = window.location.pathname;
         var newurl = url2 + `?data=all&qno=${index}`;
@@ -94,6 +121,13 @@ $(function() {
     if (index == data.length - 1) {
         $('#next').hide();
     }
+
+
+    loadData();
+    dragDrop();
+
+   
+
 
 
 }); // end document ready function

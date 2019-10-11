@@ -50,6 +50,13 @@ $(function() {
 
     } //end here drag and drop 
 
+// to suffle the position of images at random places
+  let imgRandPosition = function(){
+    let questionBox = $('.questionBox');
+    $.each(questionBox, function(i, value){
+      $(this).css({order: Math.floor(Math.random() * questionBox.length) +1});
+    })
+  }
 
 
     let loadData = function(){
@@ -125,6 +132,7 @@ $(function() {
 
     loadData();
     dragDrop();
+    imgRandPosition();
 
    
 
